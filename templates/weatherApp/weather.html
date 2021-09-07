@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
 </head>
 <body>
-    <section class="hero is-primary">
+    <section class="is-primary" style="background-color: darkgray;">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    What's the weather like?
+                   Find out weather update
                 </h1>
             </div>
         </div>
@@ -21,7 +21,7 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-offset-4 is-4">
+                <div class="column is-three-fifths">
                     <form method="POST">
                         {% csrf_token %}
                         <div class="field has-addons">
@@ -31,19 +31,21 @@
                             </div>
                             <div class="control">
                                 <button type="submit" class="button is-info">
-                                    Add City
+                                    Search
                                 </button>
                             </div>
                         </div>
                     </form>
                 </div>
+
+                <div class="column"></div>
             </div>
         </div>
     </section>
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-offset-4 is-4">
+                <div class="column is-one-third">
                     {% for city_weather in weather_data %}
 
                     <div class="box">
